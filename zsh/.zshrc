@@ -14,7 +14,7 @@ source /usr/share/zsh-theme-powerlevel9k/powerlevel9k.zsh-theme
 alias ls='ls --color=auto'
 
 # remove user
-DEFAULT_USER=proton
+DEFAULT_USER=$(whoami)
 
 # customizations
 POWERLEVEL9K_DISABLE_RPROMPT=true
