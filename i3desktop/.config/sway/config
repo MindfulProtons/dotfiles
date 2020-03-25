@@ -220,7 +220,7 @@ exec --no-startup-id eval $(ssh-agent)
 # Keybinds
 
 ## custom keybinds
-bindsym Print exec python ~/.scripts/screenshotter/screenshotter.py
+bindsym Print exec python ~/.scripts/screenshotter/screenshottersway.py
 
 # music bindings
 bindsym XF86AudioPlay exec mpc toggle
