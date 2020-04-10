@@ -131,7 +131,7 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+r reload
+bindsym $mod+Shift+r exec "sleep 1; swaymsg reload"
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'"
 
@@ -191,6 +191,10 @@ workspace $ws8 output DVI-D-1
 workspace $ws9 output DVI-D-1
 workspace $ws10 output DVI-D-1
 
+# output commands
+output HDMI-A-1 mode --custom 1600x900@75Hz pos 0 0 bg ~/.backgrounds/day/coexist.png fill subpixel rgb
+output DVI-D-1 mode --custom 1600x900@75Hz pos 1600 0 bg ~/.backgrounds/day/coexist.png fill subpixel rgb
+
 # miscellaneous i3 settings (disabling mouse focus, removing titlebar, etc.) & i3-gaps-exclusive settings (comment lines 199-202 if not gaps fork)
 focus_follows_mouse no
 default_border pixel 1
@@ -221,10 +225,9 @@ exec --no-startup-id eval $(ssh-agent)
 
 ## custom keybinds
 bindsym Print exec python ~/.scripts/screenshotter/screenshottersway.py
-
 bindsym Shift+Print exec python ~/.scripts/screenshotter/screenshottersway_select.py
 
-# music bindings
+## music bindings
 bindsym XF86AudioPlay exec mpc toggle
 bindsym XF86AudioStop exec mpc stop
 bindsym XF86AudioNext exec mpc next
@@ -237,7 +240,11 @@ bindsym $mod+l exec --no-startup-id swaylock
 bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
 
-## fix bug with GTK+3
+## mumble bindings
+bindsym KP_Begin exec --no-startup-id mumble rpc togglemute
+bindsym KP_Right exec --no-startup-id mumble rpc toggledeaf
+
+# fix bug with GTK+3
 set $gnome-schema org.gnome.desktop.interface
 
 exec_always {
@@ -246,11 +253,6 @@ exec_always {
     gsettings set $gnome-schema cursor-theme 'Adwaita'
     gsettings set $gnome-schema font-name 'Cantarell 10'
 }
-
-
-## output commands
-output HDMI-A-1 mode --custom 1600x900@75Hz pos 0 0 bg ~/.backgrounds/day/coexist.png fill subpixel rgb
-output DVI-D-1 mode --custom 1600x900@75Hz pos 1600 0 bg ~/.backgrounds/day/coexist.png fill subpixel rgb
 
 # fixing steam starting on random workspaces for no reason
 assign [class="^Steam$" title="^Steam$"] $ws2
