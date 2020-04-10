@@ -29,7 +29,7 @@ bindsym XF86AudioMute exec --no-startup-id amixer set Master toggle && $refresh_
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec alacritty
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -222,6 +222,7 @@ exec --no-startup-id udiskie
 
 ## custom keybinds
 bindsym Print exec python ~/.scripts/screenshotter/screenshotter.py
+bindsym Shift+Print exec python ~/.scripts/screenshotter/screenshotter_select.py
 
 # music bindings
 bindsym XF86AudioPlay exec mpc toggle
