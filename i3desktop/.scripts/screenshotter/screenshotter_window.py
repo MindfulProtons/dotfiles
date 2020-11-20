@@ -16,7 +16,7 @@ second = datetime.now().second
 #12-27-16_11:25:50
 filename = "%s-%s-%s_%s:%s:%s.png" % (month, day, year, hour, minute, second)
 
-os.system("shotgun '%s'" % filename)
+os.system("shotgun -i $(hacksaw -f %%i) %s" % filename)
 os.system("mv '%s' ~/.screenshots/" % filename)
 link = str(subprocess.check_output(["~/.scripts/screenshotter/imgur.sh  ~/.screenshots/%s " % filename], shell=True))
 os.system('echo -n "%s" | xclip -selection clipboard' % link[2:-3])
