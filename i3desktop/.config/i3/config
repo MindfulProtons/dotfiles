@@ -223,6 +223,7 @@ exec --no-startup-id /usr/lib/mate-polkit/polkit-mate-authentication-agent-1
 ## custom keybinds
 bindsym Print exec python ~/.scripts/screenshotter/screenshotter.py
 bindsym Shift+Print exec python ~/.scripts/screenshotter/screenshotter_select.py
+bindsym $mod+Print exec python ~/.scripts/screenshotter/screenshotter_window.py
 
 # music bindings
 bindsym XF86AudioPlay exec mpc toggle
