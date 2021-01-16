@@ -6,12 +6,14 @@ promptinit
 # enables a menu
 zstyle ':completion:*' menu select
 
-# loads theme
-POWERLEVEL9K_MODE='nerdfont-complete'
-source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
+# prompt
+PROMPT='%F{green}%n@%m%f: %F{red}%~%f %F{blue}%#%f '
 
 # enabling ZSH history
-HISTFILE=${ZDOTDIR:-$HOME}/.zsh_history
+export HISTFILE=$HOME/.zsh_history
+export SAVEHIST=10000
+export HISTFILESIZE=1000000000
+export HISTSIZE=1000000000
 
 # color ls
 alias ls='ls --color=auto'
@@ -19,9 +21,5 @@ alias ls='ls --color=auto'
 # remove user
 DEFAULT_USER=$(whoami)
 
-# customizations
-POWERLEVEL9K_DISABLE_RPROMPT=true
-POWERLEVEL9K_LEGACY_ICON_SPACING=true
-
 # alias for VPN
-alias vpnshell='sudo ip netns exec mullvad_de_all sudo -u $USER -i'
+alias vpnshell='sudo ip netns exec mullvad_us_all sudo -u $USER -i'
