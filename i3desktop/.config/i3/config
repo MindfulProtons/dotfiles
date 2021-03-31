@@ -166,7 +166,7 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
 	i3bar_command i3bar --transparency
-        status_command py3status -c ~/.config/i3/i3status.conf
+        status_command py3status
 	tray_output primary
 	font pango:Droid Sans Mono 8
 
