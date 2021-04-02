@@ -1,0 +1,8 @@
+font=monospace 8
+width=300
+background-color=#404552
+layer=overlay
+border-color=#383c4a
+icons=1
+border-radius=1
+sort=+priority
