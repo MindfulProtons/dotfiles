@@ -198,8 +198,11 @@ output DP-1 mode 1920x1080@144Hz pos 0 0 bg ~/.backgrounds/day/coexist.png fill 
 # miscellaneous i3 settings (disabling mouse focus, removing titlebar, etc.) & i3-gaps-exclusive settings (comment lines 199-202 if not gaps fork)
 focus_follows_mouse no
 default_border pixel 1
-for_window [class=".*"] border pixel 1
+for_window [class="^.*"] border pixel 1
 for_window [class="Steam"] border pixel 0
+default_border pixel 1
+default_floating_border pixel 1
+
 gaps outer 20
 gaps inner 20
 smart_gaps on
@@ -220,6 +223,9 @@ exec --no-startup-id xrdb ~/.Xresources
 exec --no-startup-id mako
 exec --no-startup-id udiskie
 exec --no-startup-id eval $(ssh-agent)
+exec swayidle -w \
+     	      timeout 1800 'swaymsg "output * dpms off"' \
+	      resume 'swaymsg "output * dpms on"'
 
 # Keybinds
 
