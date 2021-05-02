@@ -75,6 +75,8 @@ window#waybar.chromium {
 #tray,
 #mode,
 #idle_inhibitor,
+#custom-aur_upd,
+#custom-pacman_upd,
 #mpd {
     padding: 0 0px;
     margin: 0 4px;
@@ -235,4 +237,16 @@ label:focus {
     padding: 0 5px;
     margin: 0 5px;
     min-width: 16px;
+}
+
+#custom-pacman_upd {
+    padding: 0px;
+    margin: 0px;
+    margin-left: 4px;
+}
+
+#custom-aur_upd {
+    padding: 0px;
+    margin: 0px;
+    margin-right: 4px;
 }
