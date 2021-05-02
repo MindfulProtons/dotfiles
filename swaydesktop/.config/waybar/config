@@ -22,14 +22,14 @@
     },
     "custom/pacman_upd": {
     	"format": "UPD: {}/",
-	"interval": 3600,
+	"interval": 900,
 	"exec": "checkupdates | wc -l",
 	"exec-if": "exit 0",
 	"signal": 8
     },
     "custom/aur_upd": {
         "format": "{}",
-	"interval": 3600,
+	"interval": 900,
 	"exec": "yay -Qua | wc -l",
 	"exec-if": "exit 0",
 	"signal": 8
