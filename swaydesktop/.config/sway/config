@@ -166,17 +166,6 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
 	swaybar_command waybar
-	tray_output DP-1
-	font pango:Droid Sans Mono 8
-
-	colors {
-	       background #00000000
-
-	       focused_workspace #FFFFFF #00000000 #FFFFFF
-	       inactive_workspace #00000000 #00000000 #FFFFFF
-	       urgent_workspace #900000 #00000080 #FFFFFF
-	       binding_mode #900000 #00000080 #FFFFFF
-	       }
 }
 
 # Workspace config for neutron (2 monitors, DVI-D-0 and HDMI-A-0)
