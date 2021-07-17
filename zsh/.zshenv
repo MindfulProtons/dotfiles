@@ -1,5 +1,5 @@
 # export EDITOR and VISUAL to emacs
-export VISUAL="emacs"
+export VISUAL='emacsclient -c'
 export EDITOR="$VISUAL"
 
 # export XDG config directory

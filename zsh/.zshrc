@@ -1,5 +1,5 @@
 # initializes completion
-autoload -Uz compinit promptinit
+autoload -Uz compinit promptinit edit-command-line
 compinit
 promptinit
 
@@ -17,6 +17,9 @@ export HISTSIZE=1000000000
 
 # color ls
 alias ls='ls --color=auto'
+
+# editor alias
+alias editor="$VISUAL"
 
 # remove user
 DEFAULT_USER=$(whoami)
