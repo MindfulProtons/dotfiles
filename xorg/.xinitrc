@@ -12,9 +12,9 @@ eval $(ssh-agent)
 # polkit start
 /usr/lib/mate-polkit/polkit-mate-authentication-agent-1 &
 
-# changes my mode to 1600x900@75hz for both monitors
-xrandr --output DisplayPort-0 --mode 1600x900 --rate 75
-xrandr --output HDMI-A-0 --mode 1600x900 --rate 75
+# changes the mode for each monitor
+xrandr --output DisplayPort-0 --mode 1920x1080 --rate 144
+xrandr --output DisplayPort-1 --mode 1920x1080 --rate 144
 
 # starts i3wm
 exec i3
