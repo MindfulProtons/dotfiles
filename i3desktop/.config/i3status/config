@@ -12,14 +12,27 @@ general {
 }
 
 order += "volume master"
+order += "weather_owm"
 order += "mpd_status"
 order += "arch_updates"
 order += "frame cpu"
 order += "tztime local"
 
 
+weather_owm {
+	api_key = "INSERTYOUROWNAPIKEYHERE"
+	format = 'Weather: {temperature}, {description}'
+	format_temperature = '{current:.0f}°{unit}'
+}
+
 mpd_status {
 	cache_timeout = 0.1
+	color_play = '#FFFFFF'
+	color_pause = '#FFFFFF'
+	color_stop = '#FFFFFF'
+	state_play = ">"
+	state_stop = ".."
+	state_pause = "||"
 }
 
 frame cpu {
