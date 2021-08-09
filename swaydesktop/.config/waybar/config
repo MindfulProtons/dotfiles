@@ -21,16 +21,9 @@
         "format": "🎵: {volume}%",
     },
     "custom/pacman_upd": {
-    	"format": "UPD: {}/",
+    	"format": "UPD: {} ",
 	"interval": 900,
-	"exec": "checkupdates | wc -l",
-	"exec-if": "exit 0",
-	"signal": 8
-    },
-    "custom/aur_upd": {
-        "format": "{}",
-	"interval": 900,
-	"exec": "yay -Qua | wc -l",
+	"exec": "yay -Qu | wc -l",
 	"exec-if": "exit 0",
 	"signal": 8
     },
