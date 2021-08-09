@@ -1,0 +1,24 @@
+#+TITLE: Proton's Dotfiles
+
+These are my dotfiles.
+
+* Requirements
+  Requires either [[https://github.com/Airblader/i3][i3-gaps]] or [[https://github.com/swaywm/sway][sway]]. It also requires [[https://www.gnu.org/software/stow/][GNU stow]] for installation.
+** Xorg requirements
+   - [[https://github.com/neXromancers/shotgun][shotgun]] and [[https://github.com/neXromancers/hacksaw][hacksaw]]: Screenshotting tools
+   - [[https://dunst-project.org/][dunst]]: Notification daemon
+   - [[https://github.com/davatorium/rofi][rofi]]: Application launcher
+   - [[https://www.jwz.org/xscreensaver/][xscreensaver]]: Screen locker
+** Wayland requirements
+   - [[https://github.com/emersion/grim][grim]] and [[https://github.com/emersion/slurp][slurp]]: Screenshotting tools
+   - [[https://wayland.emersion.fr/mako/][mako]]: Notification daemon
+   - [[https://hg.sr.ht/~scoopta/wofi][wofi]]: Application launcher
+   - [[https://github.com/swaywm/swaylock][swaylock]]: Screen locker
+** Common requirements
+   - [[https://github.com/derat/xsettingsd][xsettingsd]]: Sets theme/RGB settings.
+   - [[https://github.com/coldfix/udiskie][udiskie]]: Disk manager and automounter.
+
+* Installation
+  To install my dotfiles, first clone this repository in a directory at the root of the home folder. Then, run inside of it:
+  ~$ stow *~
+  Reload all of the applications that have been configured in the dotfiles.
