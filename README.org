@@ -20,5 +20,7 @@ These are my dotfiles.
 
 * Installation
   To install my dotfiles, first clone this repository in a directory at the root of the home folder. Then, run inside of it:
+
   ~$ stow *~
+  
   Reload all of the applications that have been configured in the dotfiles.
