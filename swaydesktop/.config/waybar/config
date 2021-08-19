@@ -23,7 +23,7 @@
     "custom/pacman_upd": {
     	"format": "UPD: {} ",
 	"interval": 900,
-	"exec": "yay -Qu | wc -l",
+	"exec": "checkupdates+aur | wc -l",
 	"exec-if": "exit 0",
 	"signal": 8
     },

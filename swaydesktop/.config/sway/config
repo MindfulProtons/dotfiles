@@ -214,8 +214,10 @@ exec --no-startup-id udiskie
 exec --no-startup-id eval $(ssh-agent)
 exec --no-startup-id xsettingsd &
 exec swayidle -w \
+     	      timeout 1800 'swaylock -f -c 000000' \
      	      timeout 1800 'swaymsg "output * dpms off"' \
-	      resume 'swaymsg "output * dpms on"'
+	      resume 'swaymsg "output * dpms on"' \
+	      before-sleep 'swaylock -f -c 000000'
 
 exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
 
