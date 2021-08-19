@@ -10,6 +10,7 @@ export QT_QPA_PLATFORMTHEME=gtk2
 
 # allows firefox to use wayland, uncomment if not on wayland
 
+export MOZ_ENABLE_WAYLAND=1
 
 export XDG_DATA_HOME="$HOME/.local/share"
 
