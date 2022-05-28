@@ -181,8 +181,9 @@ workspace $ws9 output DP-2
 workspace $ws10 output DP-2
 
 # output commands
-output DP-2 mode 1920x1080@144Hz pos 1920 0 bg ~/.backgrounds/day/coexist.png fill subpixel rgb adaptive_sync on
-output DP-1 mode 1920x1080@144Hz pos 0 0 bg ~/.backgrounds/day/coexist.png fill subpixel rgb adaptive_sync on
+output DP-2 mode 1920x1080@144Hz pos 1920 0 bg ~/.backgrounds/day/coexist.png fill subpixel rgb adaptive_sync off
+output DP-1 mode 1920x1080@144Hz pos 0 0 bg ~/.backgrounds/day/lastquirrel.png fill subpixel rgb adaptive_sync off
+output HDMI-A-1 mode 1920x1080@75Hz pos 0 0 bg ~/.backgrounds/day/lastquirrel.png fill subpixel rgb
 
 # miscellaneous i3 settings (disabling mouse focus, removing titlebar, etc.) & i3-gaps-exclusive settings (comment lines 199-202 if not gaps fork)
 focus_follows_mouse no
@@ -213,11 +214,10 @@ exec --no-startup-id mako
 exec --no-startup-id udiskie
 exec --no-startup-id eval $(ssh-agent)
 exec --no-startup-id xsettingsd &
+exec --no-startup-id easyeffects --gapplication-service
 exec swayidle -w \
-     	      timeout 1800 'swaylock -f -c 000000' \
      	      timeout 1800 'swaymsg "output * dpms off"' \
-	      resume 'swaymsg "output * dpms on"' \
-	      before-sleep 'swaylock -f -c 000000'
+	      resume 'swaymsg "output * dpms on"'
 
 exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
 
@@ -232,6 +232,10 @@ bindsym XF86AudioPlay exec mpc toggle
 bindsym XF86AudioStop exec mpc stop
 bindsym XF86AudioNext exec mpc next
 bindsym Xf86AudioPrev exec mpc prev
+
+## mic/headphone controls
+bindsym KP_Begin exec xdotool key KP_Begin
+bindsym KP_Right exec xdotool key KP_Right
 
 ## lockscreen
 bindsym $mod+l exec --no-startup-id swaylock
@@ -254,3 +258,8 @@ exec_always {
 
 # fixing steam starting on random workspaces for no reason
 assign [class="^Steam$" title="^Steam$"] $ws2
+
+# mouse input stuff
+input type:pointer {
+	accel_profile flat
+} 

@@ -8,7 +8,7 @@
 }
 
 window#waybar {
-    background-color: rgba(43, 48, 59, 0);
+    background-color: rgba(12,13,14,100);
     border-bottom: 0px solid rgba(100, 114, 125, 0.5);
     color: #ffffff;
 }
@@ -80,6 +80,15 @@ window#waybar.chromium {
 #mpd {
     padding: 0 0px;
     margin: 0 4px;
+    color: #ffffff;
+    background-color: rgba(0,0,0,0);
+}
+
+#mpd.playing,
+#mpd.disconnected,
+#mpd.stopped,
+#mpd.paused {
+    background-color: rgba(0,0,0,0);
     color: #ffffff;
 }
 
@@ -212,23 +221,6 @@ label:focus {
 #idle_inhibitor.activated {
     background-color: #ecf0f1;
     color: #2d3436;
-}
-
-#mpd {
-    background-color: #66cc99;
-    color: #2a5c45;
-}
-
-#mpd.disconnected {
-    background-color: #f53c3c;
-}
-
-#mpd.stopped {
-    background-color: #90b1b1;
-}
-
-#mpd.paused {
-    background-color: #51a37a;
 }
 
 #language {
