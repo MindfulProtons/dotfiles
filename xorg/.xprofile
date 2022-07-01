@@ -1,8 +1,4 @@
 ## sets Qt5 theme to be gtk2
 export QT_QPA_PLATFORMTHEME=gtk2
 
-## sets mozilla variables for Xorg
-export MOZ_X11_EGL=1
-export MOZ_DISABLE_RDD_SANDBOX=1
-
 xsettingsd &
