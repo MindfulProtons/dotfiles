@@ -19,7 +19,7 @@ export HISTSIZE=1000000000
 alias ls='ls --color=auto'
 
 # editor alias
-alias editor="$VISUAL"
+alias edit="$VISUAL"
 
 # remove user
 DEFAULT_USER=$(whoami)
