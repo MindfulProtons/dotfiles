@@ -171,12 +171,12 @@ bar {
 	font pango:Droid Sans Mono 8
 
 	colors {
-	       background #00000000
+	       background #0C0D0EFF
 
-	       focused_workspace #FFFFFF #00000000 #FFFFFF
-	       inactive_workspace #00000000 #00000000 #FFFFFF
-	       urgent_workspace #900000 #00000080 #FFFFFF
-	       binding_mode #900000 #00000080 #FFFFFF
+	       focused_workspace #FFFFFF #0C0D0EFF #FFFFFF
+	       inactive_workspace #0C0D0E0FF #0C0D0EFF #FFFFFF
+	       urgent_workspace #900000 #0C0D0EFF #FFFFFF
+	       binding_mode #900000 #0C0D0EFF #FFFFFF
 	       }
 }
 
@@ -212,11 +212,13 @@ client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 client.background       #ffffff
 
 # autostart nonsense (picom, feh)
-exec --no-startup-id feh --bg-fill ~/.backgrounds/day/coexist.png
+exec --no-startup-id feh --bg-fill ~/.backgrounds/day/lastquirrel.png
 exec --no-startup-id xrdb ~/.Xresources
 exec --no-startup-id picom --experimental-backends
 exec --no-startup-id dunst
-exec --no-startup-id udiskie
+exec --no-startup-id pcmanfm -d &
+exec --no-startup-id easyeffects --gapplication-service &
+exec --no-startup-id keepassxc &
 exec --no-startup-id xscreensaver -no-splash
 exec --no-startup-id /usr/lib/mate-polkit/polkit-mate-authentication-agent-1
 # Keybinds

@@ -20,7 +20,7 @@ order += "tztime local"
 
 
 weather_owm {
-	api_key = "INSERTYOUROWNAPIKEYHERE"
+	api_key = "INSERTAPIKEY"
 	format = 'Weather: {temperature}, {description}'
 	format_temperature = '{current:.0f}°{unit}'
 }
@@ -46,7 +46,7 @@ frame cpu {
       lm_sensors {
       	format_chip = '{format_sensor}'
     	format_sensor = '{input:g}°C'
-    	chips = ['k10temp-pci-00c3']
+    	chips = ['zenpower-pci-00c3']
     	sensors = ['tdie']
     	}
 }
