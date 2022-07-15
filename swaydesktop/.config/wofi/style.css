@@ -5,14 +5,14 @@ window {
 }
 
 #input {
-    margin-top: 340px;
-    margin-left: 340px;
-    margin-right: 340px;
+    margin-top: 320px;
+    margin-left: 320px;
+    margin-right: 320px;
     border: 0px solid #928374;
     background-color: rgba(0,0,0,0);
     color: white;
     font-family: System San Francisco Display;
-    font-size: 18pt;
+    font-size: 22pt;
 }
 
 #inner-box {
@@ -37,7 +37,7 @@ window {
     margin: 5px;
     color: #FFFFFF;
     font-family: System San Francisco Display;
-    font-size: 18pt;
+    font-size: 22pt;
 } 
 
 #entry:selected {

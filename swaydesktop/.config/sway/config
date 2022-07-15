@@ -19,17 +19,11 @@ font pango:monospace 8
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 #font pango:DejaVu Sans Mono 8
 
-# Using amixer here for ALSA.
-set $refresh_i3status killall -SIGUSR1 i3status
-bindsym XF86AudioRaiseVolume exec --no-startup-id amixer set PCM 5%+ && $refresh_i3status
-bindsym XF86AudioLowerVolume exec --no-startup-id amixer set PCM 5%- && $refresh_i3status
-bindsym XF86AudioMute exec --no-startup-id amixer set Master toggle && $refresh_i3status
-
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec foot
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -214,6 +208,7 @@ exec --no-startup-id mako
 exec --no-startup-id udiskie
 exec --no-startup-id eval $(ssh-agent)
 exec --no-startup-id xsettingsd &
+exec --no-startup-id pcmanfm -d &
 exec --no-startup-id easyeffects --gapplication-service
 exec swayidle -w \
      	      timeout 1800 'swaymsg "output * dpms off"' \
@@ -234,7 +229,11 @@ bindsym XF86AudioStop exec mpc stop
 bindsym XF86AudioNext exec mpc next
 bindsym Xf86AudioPrev exec mpc prev
 
-## mic/headphone controls
+## volume bindings
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume 0 -5%
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +5%
+
+## mic/headphone controls for discord
 bindsym KP_Begin exec xdotool key KP_Begin
 bindsym KP_Right exec xdotool key KP_Right
 

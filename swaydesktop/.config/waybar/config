@@ -4,7 +4,7 @@
     "height": 24,
     "modules-left": ["sway/workspaces", "sway/mode"],
     "modules-center": [],
-    "modules-right": ["pulseaudio","custom/separator","mpd","custom/separator","custom/pacman_upd","custom/aur_upd","custom/separator","cpu","temperature","custom/separator","clock","tray"],
+    "modules-right": ["pulseaudio","custom/separator","mpd","custom/separator","cpu","temperature","custom/separator","clock","tray"],
     "sway/window": {
         "max-length": 50
     },
@@ -44,13 +44,6 @@
     },
     "pulseaudio": {
         "format": "🎵: {volume}%",
-    },
-    "custom/pacman_upd": {
-    	"format": "UPD: {} ",
-	"interval": 900,
-	"exec": "checkupdates+aur | wc -l",
-	"exec-if": "exit 0",
-	"signal": 8
     },
     "cpu": {
     	"format": "CPU: {usage}%",
