@@ -18,6 +18,9 @@ export HISTSIZE=1000000000
 # color ls
 alias ls='ls --color=auto'
 
+# alias paru to yay
+alias yay='paru'
+
 # editor alias
 alias edit="$VISUAL"
 
