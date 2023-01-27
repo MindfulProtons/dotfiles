@@ -3,7 +3,7 @@
     "position": "bottom",
     "height": 24,
     "modules-left": ["sway/workspaces", "sway/mode"],
-    "modules-center": [],
+    "modules-center": ["sway/window"],
     "modules-right": ["pulseaudio","custom/separator","mpd","custom/separator","cpu","temperature","custom/separator","clock","tray"],
     "sway/window": {
         "max-length": 50
@@ -18,7 +18,7 @@
     	"tooltip": false
     },
     "mpd": {
-    	"format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ",
+    	"format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ",
     	"format-disconnected": "Disconnected ",
     	"format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
     	"interval": 10,

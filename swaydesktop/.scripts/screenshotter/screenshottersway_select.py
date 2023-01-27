@@ -21,6 +21,6 @@ second = datetime.now().second
 filename = "%s-%s-%s_%s:%s:%s.png" % (month, day, year, hour, minute, second)
 
 os.system("grim -g \"$(slurp)\" %s && mv %s ~/.screenshots" % (filename, filename))
-link = str(subprocess.check_output(["~/.scripts/screenshotter/imgur.sh  ~/.screenshots/%s " % filename], shell=True))
-os.system('echo -n "%s" | wl-copy' % link[2:-3])
-os.system('notify-send "Link copied to clipboard."')
+# link = str(subprocess.check_output(["~/.scripts/screenshotter/imgur.sh  ~/.screenshots/%s " % filename], shell=True))
+# os.system('echo -n "%s" | wl-copy' % link[2:-3])
+# os.system('notify-send "Link copied to clipboard."')

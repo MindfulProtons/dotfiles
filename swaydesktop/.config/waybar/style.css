@@ -2,13 +2,14 @@
     border: none;
     border-radius: 0;
     /* `otf-font-awesome` is required to be installed for icons */
-    font-family: Droid Sans Mono;
+    font-family: Noto Sans Mono;
     font-size: 8pt;
     min-height: 0;
+    color: #ffffff;
 }
 
 window#waybar {
-    background-color: rgba(12,13,14,100);
+    background-color: rgba(12,13,14,0.85);
     border-bottom: 0px solid rgba(100, 114, 125, 0.5);
     color: #ffffff;
 }
