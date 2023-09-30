@@ -168,7 +168,7 @@ label:focus {
 }
 
 #network {
-    background-color: #2980b9;
+    background-color: rgba(0,0,0,0);
 }
 
 #network.disconnected {

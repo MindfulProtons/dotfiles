@@ -4,13 +4,9 @@
     "height": 24,
     "modules-left": ["sway/workspaces", "sway/mode"],
     "modules-center": ["sway/window"],
-    "modules-right": ["pulseaudio","custom/separator","mpd","custom/separator","cpu","temperature","custom/separator","clock","tray"],
+    "modules-right": ["pulseaudio","custom/separator","mpd","custom/separator","cpu","temperature","custom/separator","network","custom/separator","clock","tray"],
     "sway/window": {
         "max-length": 50
-    },
-    "battery": {
-        "format": "{capacity}% {icon}",
-        "format-icons": ["", "", "", "", ""]
     },
     "custom/separator": {
 	"format": "|",
@@ -44,6 +40,7 @@
     },
     "pulseaudio": {
         "format": "🎵: {volume}%",
+	"ignored-sinks": ["Easy Effects Sink"]
     },
     "cpu": {
     	"format": "CPU: {usage}%",
@@ -51,8 +48,20 @@
 	"tooltip": false
     },
     "temperature": {
-    	"hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+    	"hwmon-path": "/sys/class/hwmon/hwmon1/temp3_input",
 	"format": ", {temperatureC}°C"
+	},
+    "network": {
+        "interface": "wlp10s0",
+    	"format": "{ifname}",
+    	"format-wifi": "{essid} ({signalStrength}%) ",
+	"format-ethernet": "{ipaddr}/{cidr} ",
+	"format-disconnected": "", //An empty format will hide the module.
+	"tooltip-format": "{ifname} via {gwaddr} ",
+	"tooltip-format-wifi": "{essid} ({signalStrength}%) ",
+	"tooltip-format-ethernet": "{ifname} ",
+	"tooltip-format-disconnected": "Disconnected",
+	"max-length": 50
 	},
     "clock": {
     	"format": "{:%A, %B %d %H:%M}",
