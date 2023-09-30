@@ -26,6 +26,3 @@ alias edit="$VISUAL"
 
 # remove user
 DEFAULT_USER=$(whoami)
-
-# alias for VPN
-alias vpnshell='sudo ip netns exec mullvad_us_all sudo -u $USER -i'
