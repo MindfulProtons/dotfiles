@@ -4,7 +4,7 @@
     "height": 24,
     "modules-left": ["hyprland/workspaces"],
     "modules-center": ["hyprland/window"],
-    "modules-right": ["pulseaudio","custom/separator","mpd","custom/separator","cpu","temperature","custom/separator","network","custom/separator","custom/weather","custom/separator","clock","tray"],
+    "modules-right": ["pulseaudio","custom/separator","mpd","custom/separator","cpu","temperature","custom/separator","network","custom/separator","clock","tray"],
     "hyprland/window": {
         "separate-outputs": true
     },
@@ -14,9 +14,9 @@
     	"tooltip": false
     },
     "mpd": {
-    	"format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ",
+    	"format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S})",
     	"format-disconnected": "Disconnected ",
-    	"format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
+    	"format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped",
     	"interval": 10,
     	"consume-icons": {
     		"on": " " // Icon shows only when "consume" is on
@@ -26,17 +26,17 @@
     		"on": " "
     	},
     	"repeat-icons": {
-    	"on": " "
+    		"on": " "
     	},
-    "single-icons": {
-    "on": "1 "
-    },
-    "state-icons": {
-    "paused": "",
-    "playing": ""
-    },
-    "tooltip-format": "MPD (connected)",
-    "tooltip-format-disconnected": "MPD (disconnected)"
+    	"single-icons": {
+    		"on": "1 "
+    	},
+    	"state-icons": {
+    		"paused": "",
+    		"playing": "",
+    	},
+    	"tooltip-format": "MPD (connected)",
+    	"tooltip-format-disconnected": "MPD (disconnected)"
     },
     "pulseaudio": {
         "format": "🎵: {volume}%",
@@ -63,13 +63,6 @@
 	"tooltip-format-disconnected": "Disconnected",
 	"max-length": 50
 	},
-    "custom/weather": {
-    	"format": "{} °",
-    	"tooltip": true,
-    	"interval": 3600,
-    	"exec": "wttrbar --main-indicator temp_F --location Somerville",
-    	"return-type": "json"
-    },
     "clock": {
     	"format": "{:%A, %B %d %H:%M}",
         "format-alt": "{:%a, %d. %b  %H:%M}",
