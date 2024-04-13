@@ -212,12 +212,11 @@ exec python ~/.scripts/backgroundchanger/DayNightWallpapers
 exec dex -a
 exec swayidle -w \
      	      timeout 1800 'swaymsg "output * dpms off"' \
-	      resume 'swaymsg "output * dpms on"'
+              resume 'swaymsg "output * dpms on"'
 
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
 exec blueman-applet
-exec nm-applet --indicator
 
 # Keybinds
 
@@ -254,13 +253,9 @@ exec_always {
     gsettings set $gnome-schema gtk-theme 'Arc-Dark'
     gsettings set $gnome-schema icon-theme 'Papirus-Dark'
     gsettings set $gnome-schema cursor-theme 'Adwaita'
-    gsettings set $gnome-schema font-name 'Cantarell 10'
+    gsettings set $gnome-schema font-name 'Sans 10'
     gsettings set $gnome-schema font-antialiasing 'rgba'
 }
-
-
-# fixing steam starting on random workspaces for no reason
-assign [class="^Steam$" title="^Steam$"] $ws2
 
 # mouse input stuff
 input type:pointer {

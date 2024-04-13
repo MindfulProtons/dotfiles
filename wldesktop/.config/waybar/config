@@ -2,17 +2,76 @@
     "layer": "top",
     "position": "bottom",
     "height": 24,
-    "modules-left": ["hyprland/workspaces"],
-    "modules-center": ["hyprland/window"],
-    "modules-right": ["pulseaudio","custom/separator","mpd","custom/separator","cpu","temperature","custom/separator","network","custom/separator","clock","tray"],
-    "hyprland/window": {
-        "separate-outputs": true
+    "modules-left": [
+        "sway/workspaces", 
+        "custom/right-arrow-dark"
+    ],
+    "modules-center": [
+    	"custom/left-arrow-dark",
+		"clock#1",
+		"custom/left-arrow-light",
+		"custom/left-arrow-dark",
+		"clock#2",
+		"custom/right-arrow-dark",
+		"custom/right-arrow-light",
+		"clock#3",
+		"custom/right-arrow-dark"
+    ],
+    "modules-right": [
+		"custom/left-arrow-dark",
+        "pulseaudio",
+        "custom/left-arrow-light",
+        "custom/left-arrow-dark",
+        "mpd",
+		"custom/left-arrow-light",
+        "custom/left-arrow-dark",
+        "cpu",
+        "temperature",
+        "custom/left-arrow-light",
+        "custom/left-arrow-dark",
+        "network",
+        "custom/left-arrow-light",
+		"custom/left-arrow-dark",
+        "tray"
+    ],
+    "custom/left-arrow-dark": {
+		"format": "",
+		"tooltip": false
+	},
+	"custom/left-arrow-light": {
+		"format": "",
+		"tooltip": false
+	},
+	"custom/right-arrow-dark": {
+		"format": "",
+		"tooltip": false
+	},
+	"custom/right-arrow-light": {
+		"format": "",
+		"tooltip": false
+	},
+    "sway/window": {
+        "max-length": 30
     },
     "custom/separator": {
-	"format": "|",
+	    "format": "|",
         "interval": "once",
     	"tooltip": false
     },
+
+	"clock#1": {
+		"format": "{:%a}",
+		"tooltip": false
+	},
+	"clock#2": {
+		"format": "{:%H:%M}",
+		"tooltip": false
+	},
+	"clock#3": {
+		"format": "{:%m-%d}",
+		"tooltip": false
+	},
+
     "mpd": {
     	"format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S})",
     	"format-disconnected": "Disconnected ",
@@ -38,38 +97,38 @@
     	"tooltip-format": "MPD (connected)",
     	"tooltip-format-disconnected": "MPD (disconnected)"
     },
+
     "pulseaudio": {
         "format": "🎵: {volume}%",
-	"ignored-sinks": ["Easy Effects Sink"]
+	    "ignored-sinks": ["Easy Effects Sink"]
     },
+
     "cpu": {
     	"format": "CPU: {usage}%",
-	"interval": "1",
-	"tooltip": false
+	    "interval": "1",
+	    "tooltip": false
     },
+
     "temperature": {
     	"hwmon-path": "/sys/class/hwmon/hwmon1/temp3_input",
-	"format": ", {temperatureC}°C"
+	    "format": ", {temperatureC}°C"
 	},
+
     "network": {
         "interface": "wlan0",
     	"format": "{ifname}",
     	"format-wifi": "{essid} ({signalStrength}%) ",
-	"format-ethernet": "{ipaddr}/{cidr} ",
-	"format-disconnected": "", //An empty format will hide the module.
-	"tooltip-format": "{ifname} via {gwaddr} ",
-	"tooltip-format-wifi": "{essid} ({signalStrength}%) ",
-	"tooltip-format-ethernet": "{ifname} ",
-	"tooltip-format-disconnected": "Disconnected",
-	"max-length": 50
+	    "format-ethernet": "{ipaddr}/{cidr} ",
+	    "format-disconnected": "", //An empty format will hide the module.
+	    "tooltip-format": "{ifname} via {gwaddr} ",
+	    "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
+	    "tooltip-format-ethernet": "{ifname} ",
+	    "tooltip-format-disconnected": "Disconnected",
+	    "max-length": 50
 	},
-    "clock": {
-    	"format": "{:%A, %B %d %H:%M}",
-        "format-alt": "{:%a, %d. %b  %H:%M}",
-	"tooltip": false
-    },
+
     "tray":{
-	"icon-size": 16,
-	"spacing": 5
+	    "icon-size": 16,
+	    "spacing": 5
     }
 }
