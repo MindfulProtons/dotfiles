@@ -1,11 +1,15 @@
+@define-color dark-color rgba(25,25,25,0.75);
+@define-color light-color rgb(50,50,50);
+@define-color highlight-color rgb(10,10,10);
+
 * {
 	font-size: 8pt;
-	font-family: "Symbols Nerd Font Mono", "Noto Sans Mono";
+	font-family: "Noto Sans Mono";
 }
 
 window#waybar {
-	background: rgb(0, 34, 102);
-	color: #ffffff;
+	background: @dark-color;
+    color: #ffffff;
     transition-property: background-color;
     transition-duration: .5s;
 }
@@ -23,19 +27,17 @@ window#waybar {
 
 #custom-right-arrow-dark,
 #custom-left-arrow-dark {
-	color: rgb(0, 17, 51);
+    background: @light-color;
+    color: @dark-color;
 }
 
 #custom-right-arrow-light,
 #custom-left-arrow-light {
-	color: rgb(0, 34, 102);
-    background: rgb(0, 17, 51); 
+	background: @dark-color;
+    color: @light-color;
 }
 
 #workspaces,
-#clock.1,
-#clock.2,
-#clock.3,
 #pulseaudio,
 #memory,
 #cpu,
@@ -45,24 +47,42 @@ window#waybar {
 #battery,
 #disk,
 #tray {
-	background: rgb(0, 17, 51);
+}
+
+.modules-left,
+.modules-center,
+.modules-right {
+    background-color: @light-color;
+}
+
+.modules-center {
+    border-radius: 2rem;
+}
+
+.modules-left {
+    border-radius: 0 2rem 2rem 0;
+}
+
+.modules-right {
+    border-radius: 2rem 0 0 2rem;
 }
 
 #workspaces button {
-	padding: 0 2px;
-	color: #fdf6e3;
+	padding: 0px;
+	color: #ffffff;
 }
 #workspaces button.focused {
-	color: #268bd2;
+	color: #00ff00;
 }
 #workspaces button:hover {
 	box-shadow: inherit;
 	text-shadow: inherit;
 }
 #workspaces button:hover {
-	background: #1a1a1a;
-	border: #1a1a1a;
-	padding: 0 3px;
+	background: @highlight-color;
+    color: #99ff99;
+	padding: 0px;
+    border-color: @highlight-color;
 }
 
 #memory {
@@ -89,4 +109,9 @@ window#waybar {
 #tray,
 #network {
 	padding: 0 10px;
+}
+
+#tray * {
+    font-family: "Sans";
+    font-size: 12;
 }

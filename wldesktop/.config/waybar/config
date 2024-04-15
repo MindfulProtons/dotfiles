@@ -4,53 +4,22 @@
     "height": 24,
     "modules-left": [
         "sway/workspaces", 
-        "custom/right-arrow-dark"
+        "custom/right-arrow-light"
     ],
     "modules-center": [
-    	"custom/left-arrow-dark",
 		"clock#1",
-		"custom/left-arrow-light",
-		"custom/left-arrow-dark",
 		"clock#2",
-		"custom/right-arrow-dark",
-		"custom/right-arrow-light",
 		"clock#3",
-		"custom/right-arrow-dark"
     ],
     "modules-right": [
-		"custom/left-arrow-dark",
         "pulseaudio",
-        "custom/left-arrow-light",
-        "custom/left-arrow-dark",
         "mpd",
-		"custom/left-arrow-light",
-        "custom/left-arrow-dark",
         "cpu",
         "temperature",
-        "custom/left-arrow-light",
-        "custom/left-arrow-dark",
         "network",
-        "custom/left-arrow-light",
-		"custom/left-arrow-dark",
         "tray"
     ],
-    "custom/left-arrow-dark": {
-		"format": "",
-		"tooltip": false
-	},
-	"custom/left-arrow-light": {
-		"format": "",
-		"tooltip": false
-	},
-	"custom/right-arrow-dark": {
-		"format": "",
-		"tooltip": false
-	},
-	"custom/right-arrow-light": {
-		"format": "",
-		"tooltip": false
-	},
-    "sway/window": {
+       "sway/window": {
         "max-length": 30
     },
     "custom/separator": {
@@ -68,7 +37,7 @@
 		"tooltip": false
 	},
 	"clock#3": {
-		"format": "{:%m-%d}",
+		"format": "{:%m/%d}",
 		"tooltip": false
 	},
 
