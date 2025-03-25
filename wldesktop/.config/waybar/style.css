@@ -1,14 +1,14 @@
-@define-color dark-color rgba(25,25,25,0.75);
-@define-color light-color rgb(50,50,50);
-@define-color highlight-color rgb(10,10,10);
+@define-color bg-color rgba(20,20,20,0.00);
+@define-color fg-color rgb(10,10,10);
+@define-color hg-color rgb(30,30,30);
 
 * {
-	font-size: 8pt;
-	font-family: "Noto Sans Mono";
+	font-size: 10pt;
+	font-family: "Sans";
 }
 
 window#waybar {
-	background: @dark-color;
+	background: @bg-color;
     color: #ffffff;
     transition-property: background-color;
     transition-duration: .5s;
@@ -27,14 +27,14 @@ window#waybar {
 
 #custom-right-arrow-dark,
 #custom-left-arrow-dark {
-    background: @light-color;
-    color: @dark-color;
+    background: @fg-color;
+    color: @bg-color;
 }
 
 #custom-right-arrow-light,
 #custom-left-arrow-light {
-	background: @dark-color;
-    color: @light-color;
+	background: @bg-color;
+    color: @fg-color;
 }
 
 #workspaces,
@@ -52,7 +52,7 @@ window#waybar {
 .modules-left,
 .modules-center,
 .modules-right {
-    background-color: @light-color;
+    background-color: @fg-color;
 }
 
 .modules-center {
@@ -61,6 +61,7 @@ window#waybar {
 
 .modules-left {
     border-radius: 0 2rem 2rem 0;
+    padding-right: 10px; 
 }
 
 .modules-right {
@@ -79,10 +80,10 @@ window#waybar {
 	text-shadow: inherit;
 }
 #workspaces button:hover {
-	background: @highlight-color;
+	background: @hg-color;
     color: #99ff99;
 	padding: 0px;
-    border-color: @highlight-color;
+    border-color: @hg-color;
 }
 
 #memory {
@@ -109,9 +110,4 @@ window#waybar {
 #tray,
 #network {
 	padding: 0 10px;
-}
-
-#tray * {
-    font-family: "Sans";
-    font-size: 12;
 }

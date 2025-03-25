@@ -162,23 +162,36 @@ bar {
 	swaybar_command waybar
 }
 
-# Workspace config for neutron (2 monitors, DVI-D-0 and HDMI-A-0)
+# Workspace config for neutron (1 monitor and 1 TV, DP-1 (main) and HDMI-A-1 (TV))
 workspace $ws1 output DP-1
 workspace $ws2 output DP-1
 workspace $ws3 output DP-1
 workspace $ws4 output DP-1
 workspace $ws5 output DP-1
-workspace $ws6 output DP-2
-workspace $ws7 output DP-2
-workspace $ws8 output DP-2
-workspace $ws9 output DP-2
-workspace $ws10 output DP-2
+workspace $ws6 output DP-1
+workspace $ws7 output DP-1
+workspace $ws8 output DP-1
+workspace $ws9 output DP-1
+workspace $ws10 output HDMI-A-1
 
 # output commands
 
-# if all else fails, use this background (lastquirrel.png)
-output DP-1 mode 1920x1080@144Hz pos 0 0 bg ~/.backgrounds/day/lastquirrel.png fill subpixel rgb adaptive_sync on
-output DP-2 mode 1920x1080@144Hz pos 1920 0 bg ~/.backgrounds/day/lastquirrel.png fill subpixel rgb adaptive_sync on
+output DP-1 {
+    mode 3440x1440@160Hz 
+    bg ~/.backgrounds/day/complexisim.png fill 
+    subpixel rgb 
+    adaptive_sync on
+    render_bit_depth 10
+    scale 1
+}
+
+output HDMI-A-1 {
+    mode 3840x2160@60Hz
+    bg ~/.backgrounds/day/zurich.png fill
+    subpixel rgb
+    render_bit_depth 10
+    scale 2
+}
 
 # miscellaneous i3 settings (disabling mouse focus, removing titlebar, etc.) & i3-gaps-exclusive settings (comment lines 199-202 if not gaps fork)
 focus_follows_mouse no
@@ -207,7 +220,7 @@ client.background       #ffffff
 exec --no-startup-id xrdb -merge ~/.Xresources
 exec --no-startup-id mako
 exec --no-startup-id eval $(ssh-agent)
-exec --no-startup-id pcmanfm -d &
+exec --no-startup-id thunar --daemon &
 exec python ~/.scripts/backgroundchanger/DayNightWallpapers
 exec dex -a
 exec swayidle -w \
@@ -252,7 +265,7 @@ set $gnome-schema org.gnome.desktop.interface
 exec_always {
     gsettings set $gnome-schema gtk-theme 'Arc-Dark'
     gsettings set $gnome-schema icon-theme 'Papirus-Dark'
-    gsettings set $gnome-schema cursor-theme 'Adwaita'
+    gsettings set $gnome-schema cursor-theme 'Vanilla-DMZ'
     gsettings set $gnome-schema font-name 'Sans 10'
     gsettings set $gnome-schema font-antialiasing 'rgba'
 }
@@ -260,4 +273,10 @@ exec_always {
 # mouse input stuff
 input type:pointer {
 	accel_profile flat
-} 
+}
+
+#keyboard stuff
+input type:keyboard {
+  xkb_layout us
+  xkb_options caps:none
+}

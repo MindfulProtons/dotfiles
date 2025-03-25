@@ -13,10 +13,12 @@
     ],
     "modules-right": [
         "pulseaudio",
-        "mpd",
+        "custom/separator",
         "cpu",
         "temperature",
+        "custom/separator",
         "network",
+        "custom/separator",
         "tray"
     ],
        "sway/window": {
@@ -57,7 +59,7 @@
     		"on": " "
     	},
     	"single-icons": {
-    		"on": "1 "
+    		"on": "1"
     	},
     	"state-icons": {
     		"paused": "",
@@ -68,7 +70,7 @@
     },
 
     "pulseaudio": {
-        "format": "🎵: {volume}%",
+        "format": "  : {volume}%",
 	    "ignored-sinks": ["Easy Effects Sink"]
     },
 
@@ -79,19 +81,20 @@
     },
 
     "temperature": {
-    	"hwmon-path": "/sys/class/hwmon/hwmon1/temp3_input",
+    	"hwmon-path-abs": "/sys/devices/pci0000:00/0000:00:18.3/hwmon",
+        "input-filename": "temp3_input",
 	    "format": ", {temperatureC}°C"
 	},
 
     "network": {
-        "interface": "wlan0",
+        "interface": "eno1",
     	"format": "{ifname}",
-    	"format-wifi": "{essid} ({signalStrength}%) ",
-	    "format-ethernet": "{ipaddr}/{cidr} ",
+    	"format-wifi": "    Connected",
+	    "format-ethernet": "   Connected",
 	    "format-disconnected": "", //An empty format will hide the module.
 	    "tooltip-format": "{ifname} via {gwaddr} ",
 	    "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
-	    "tooltip-format-ethernet": "{ifname} ",
+	    "tooltip-format-ethernet": "{ifname}",
 	    "tooltip-format-disconnected": "Disconnected",
 	    "max-length": 50
 	},
