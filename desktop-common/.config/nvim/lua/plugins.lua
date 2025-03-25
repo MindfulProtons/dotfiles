@@ -21,8 +21,15 @@ require('pckr').add{
     requires = {'nvim-tree/nvim-web-devicons'},
     config = function()
         require('lualine').setup {
-            options = { theme = 'horizon' }
+            options = { theme = 'base16' }
         }
     end
     };
+
+    { 'tinted-theming/base16-vim', 
+    config = function()
+        vim.g.base16_background_transparent = 1;
+        vim.cmd 'colorscheme base16-tomorrow-night';
+    end
+    }; 
 }
