@@ -1,7 +1,7 @@
 local function bootstrap_pckr()
   local pckr_path = vim.fn.stdpath("data") .. "/pckr/pckr.nvim"
 
-  if not vim.loop.fs_stat(pckr_path) then
+  if not (vim.uv or vim.loop).fs_stat(pckr_path) then
     vim.fn.system({
       'git',
       'clone',
@@ -26,9 +26,9 @@ require('pckr').add{
     end
     };
 
-    { 'tinted-theming/base16-vim', 
+    { 'tinted-theming/tinted-vim', 
     config = function()
-        vim.g.base16_background_transparent = 1;
+        vim.g.tinted_background_transparent = 1;
         vim.cmd 'colorscheme base16-tomorrow-night';
     end
     }; 
