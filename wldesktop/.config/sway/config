@@ -238,10 +238,10 @@ bindsym Print exec python ~/.scripts/screenshotter/screenshottersway.py
 bindsym Shift+Print exec python ~/.scripts/screenshotter/screenshottersway_select.py
 
 ## music bindings
-bindsym XF86AudioPlay exec mpc toggle
-bindsym XF86AudioStop exec mpc stop
-bindsym XF86AudioNext exec mpc next
-bindsym XF86AudioPrev exec mpc prev
+bindsym XF86AudioPlay exec rmpc togglepause
+bindsym XF86AudioStop exec rmpc stop
+bindsym XF86AudioNext exec rmpc next
+bindsym XF86AudioPrev exec rmpc prev
 
 ## volume bindings
 bindsym XF86AudioLowerVolume exec pactl set-sink-volume 0 -5%
